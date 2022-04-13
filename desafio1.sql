@@ -62,16 +62,16 @@ VALUES
 /*
 Cria tabela dos artistas
 */
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artists`(
+ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artists`(
 	`artist_id` INT NOT NULL AUTO_INCREMENT,
     `artist_name` VARCHAR(50) NOT NULL,
     PRIMARY KEY (`artist_id`)
-) ENGINE = InnoDB;
+) ENGINE = InnoDB; 
 
 /*
 Colocando colunas na tabela artist
 */
-  INSERT INTO artists (artist_name)
+ INSERT INTO artists (artist_name)
 VALUES
 	('Walter Phoenix'),
     ('Peter Strong'),
@@ -83,7 +83,7 @@ VALUES
 /*
 Cria tabela dos álbuns
 */
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`album`(
+ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`album`(
 	`album_id` INT NOT NULL AUTO_INCREMENT,
     `album_name` VARCHAR(45) NOT NULL,
 	`artist_id` INT NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`album`(
 /*
 Colocando colunas na tabela album
 */
-INSERT INTO album (album_name, artist_id, release_year)
+ INSERT INTO album (album_name, artist_id, release_year)
 VALUES
 	('Envious', 1, 1990),
     ('Exuberant', 1, 1993),
@@ -111,7 +111,7 @@ VALUES
 /*
 Cria tabela das músicas
 */
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`songs`(
+ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`songs`(
 	`song_id` INT NOT NULL AUTO_INCREMENT,
     `song_name` VARCHAR(45) NOT NULL,
 	`album_id` INT NOT NULL,
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`songs`(
 /*
 Colocando colunas na tabela song
 */
-INSERT INTO songs (song_name, album_id, song_seconds)
+ INSERT INTO songs (song_name, album_id, song_seconds)
 VALUES
 	("Soul For Us",	1,	200),
 	("Reflections Of Magic", 1,	163),
@@ -169,10 +169,10 @@ VALUES
 /*
 Cria tabela dos artistas seguidos
 */
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`following_artists`(
+ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`following_artists`(
 	`user_id` INT NOT NULL,
     `artist_id` INT NOT NULL,
-	CONSTRAINT PRIMARY KEY (`user_id`, `artist_id`),
+	PRIMARY KEY (`user_id`, `artist_id`),
 	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
 	FOREIGN KEY (`artist_id`) REFERENCES `SpotifyClone`.`artists` (`artist_id`)
 ) ENGINE = InnoDB;
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`following_artists`(
 /*
 Colocando colunas na tabela following_artists
 */
-INSERT INTO following_artists (user_id, artist_id)
+ INSERT INTO following_artists (user_id, artist_id)
 VALUES
 	(1, 1),
 	(1, 4),
@@ -208,19 +208,20 @@ VALUES
 /*
 Cria tabela de histórico
 */
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
+ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
   	`user_id` INT NOT NULL,
   	`song_id` INT NOT NULL,
   	`date_listened` DATETIME NOT NULL,
-  	CONSTRAINT PRIMARY KEY(`user_id`, `song_id`),
+  	PRIMARY KEY(`user_id`, `song_id`),
 	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
     FOREIGN KEY (`song_id`) REFERENCES `SpotifyClone`.`songs` (`song_id`)
 ) ENGINE = InnoDB;
 
+
 /*
 Colocando colunas na tabela playback_history
 */
-INSERT INTO playback_history (user_id, song_id, date_listened)
+ INSERT INTO playback_history (user_id, song_id, date_listened)
 VALUES
     (1,	36, '2020-02-28 10:45:55'),
 	(1,	25, '2020-05-02 05:30:35'),
@@ -259,4 +260,4 @@ VALUES
 	(10, 20, '2017-02-06 08:21:34'),
 	(10, 21, '2017-12-04 05:33:43'),
 	(10, 12, '2017-07-27 05:24:49'),
-	(10, 13, '2017-12-25 01:03:57');
+	(10, 13, '2017-12-25 01:03:57'); 
