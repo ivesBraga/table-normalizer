@@ -62,7 +62,7 @@ VALUES
 /*
 Cria tabela dos artistas
 */
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artist`(
+CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artists`(
 	`artist_id` INT NOT NULL AUTO_INCREMENT,
     `artist_name` VARCHAR(50) NOT NULL,
     PRIMARY KEY (`artist_id`)
