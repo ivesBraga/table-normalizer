@@ -66,3 +66,14 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`songs`(
     FOREIGN KEY (`album_id`) REFERENCES `SpotifyClone`.`album` (`album_id`)
 ) ENGINE = InnoDB;
 
+/*
+Cria tabela dos artistas seguidos
+*/
+CREATE TABLE IF NOT EXISTS `SpotifyClone`.`following_artists`(
+	`user_id` INT NOT NULL,
+    `artist_id` INT NOT NULL,
+	CONSTRAINT PRIMARY KEY (`user_id`, `artist_id`),
+	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
+	FOREIGN KEY (`artist_id`) REFERENCES `SpotifyClone`.`artist` (`artist_id`)
+) ENGINE = InnoDB;
+
