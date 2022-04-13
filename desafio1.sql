@@ -220,7 +220,6 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
 /*
 Colocando colunas na tabela playback_history
 */
-
 INSERT INTO playback_history (user_id, song_id, date_listened)
 VALUES
     (1,	36, '2020-02-28 10:45:55'),
