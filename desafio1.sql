@@ -33,14 +33,14 @@ VALUES
 /*
 Cria tabela dos usuários
 */
-CREATE TABLE `SpotifyClone`.`user`(
+CREATE TABLE IF NOT EXISTS `SpotifyClone`.`user`(
     `user_id` INT NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(50) NOT NULL,
     `age` INT NOT NULL,
-    `signature_date` DATE NOT NULL,
+    `subscription_date` DATE NOT NULL,
     `plans_id` INT NOT NULL,
     PRIMARY KEY (`user_id`),
-    FOREIGN KEY (`plans_id` ) REFERENCES `SpotifyClone`.`plans`(`plans_id`)
+    FOREIGN KEY (`plans_id` ) REFERENCES `SpotifyClone`.`subscription_plans`(`plans_id`)
 ) engine = InnoDB;
 
 /*
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`songs`(
 /*
 Colocando colunas na tabela song
 */
-INSERT INTO song (name, album_id, song_seconds)
+INSERT INTO songs (song_name, album_id, song_seconds)
 VALUES
 	("Soul For Us",	1,	200),
 	("Reflections Of Magic", 1,	163),
