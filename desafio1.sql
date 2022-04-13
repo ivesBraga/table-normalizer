@@ -44,6 +44,22 @@ CREATE TABLE `SpotifyClone`.`user`(
 ) engine = InnoDB;
 
 /*
+Colocando colunas na tabela user
+*/
+  INSERT INTO user (username, age, subscription_date, plans_id)
+VALUES
+  ('Thati', 23, '2019-10-20', 1),
+  ('Cintia', 35, '2017-12-30', 2),
+  ('Bill', 20, '2019-06-05', 3),
+  ('Roger', 45, '2020-05-13', 4),
+  ('Norman', 58, '2017-02-17', 4),
+  ('Patrick', 33, '2017-01-06', 2),
+  ('Vivian', 26, '2018-01-05', 3),
+  ('Carol', 19, '2018-02-14', 3),
+  ('Angelina', 42, '2018-04-29', 2),
+  ('Paul', 46, '2017-01-17', 2);
+
+/*
 Cria tabela dos artistas
 */
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artist`(
@@ -99,26 +115,9 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
     FOREIGN KEY (`song_id`) REFERENCES `SpotifyClone`.`songs` (`song_id`)
 ) ENGINE = InnoDB;
 
-
-  /*
-  Colocando colunas na tabela user
-  */
-  INSERT INTO user (username, age, subscription_date, plans_id)
-VALUES
-  ('Thati', 23, '2019-10-20', 1),
-  ('Cintia', 35, '2017-12-30', 2),
-  ('Bill', 20, '2019-06-05', 3),
-  ('Roger', 45, '2020-05-13', 4),
-  ('Norman', 58, '2017-02-17', 4),
-  ('Patrick', 33, '2017-01-06', 2),
-  ('Vivian', 26, '2018-01-05', 3),
-  ('Carol', 19, '2018-02-14', 3),
-  ('Angelina', 42, '2018-04-29', 2),
-  ('Paul', 46, '2017-01-17', 2);
-
-  /*
-  Colocando colunas na tabela artist
-  */
+/*
+Colocando colunas na tabela artist
+*/
   INSERT INTO artist (artist_name)
 VALUES
 	('Walter Phoenix'),
