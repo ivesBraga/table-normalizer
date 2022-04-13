@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`album`(
 	`artist_id` INT NOT NULL,
     `release_year` INT NOT NULL,
     PRIMARY KEY (`album_id`),
-    FOREIGN KEY (`artist_id`) REFERENCES `SpotifyClone`.`artist` (`artist_id`)
+    FOREIGN KEY (`artist_id`) REFERENCES `SpotifyClone`.`artists` (`artist_id`)
 ) ENGINE = InnoDB;
 
 /*
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`following_artists`(
     `artist_id` INT NOT NULL,
 	CONSTRAINT PRIMARY KEY (`user_id`, `artist_id`),
 	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
-	FOREIGN KEY (`artist_id`) REFERENCES `SpotifyClone`.`artist` (`artist_id`)
+	FOREIGN KEY (`artist_id`) REFERENCES `SpotifyClone`.`artists` (`artist_id`)
 ) ENGINE = InnoDB;
 
 /*
