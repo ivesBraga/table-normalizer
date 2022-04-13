@@ -69,6 +69,18 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artist`(
 ) ENGINE = InnoDB;
 
 /*
+Colocando colunas na tabela artist
+*/
+  INSERT INTO artist (artist_name)
+VALUES
+	('Walter Phoenix'),
+    ('Peter Strong'),
+    ('Lance Day'),
+    ('Freedie Shannon'),
+    ('Tyler Isle'),
+    ('Fog');
+
+/*
 Cria tabela dos álbuns
 */
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`album`(
@@ -114,18 +126,6 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
 	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
     FOREIGN KEY (`song_id`) REFERENCES `SpotifyClone`.`songs` (`song_id`)
 ) ENGINE = InnoDB;
-
-/*
-Colocando colunas na tabela artist
-*/
-  INSERT INTO artist (artist_name)
-VALUES
-	('Walter Phoenix'),
-    ('Peter Strong'),
-    ('Lance Day'),
-    ('Freedie Shannon'),
-    ('Tyler Isle'),
-    ('Fog');
 
 /*
 Colocando colunas na tabela album
