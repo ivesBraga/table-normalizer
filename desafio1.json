@@ -1,7 +1,7 @@
 {
     "coluna_usuario": "username",
     "tabela_que_contem_usuario": "user",
-    "coluna_plano": "subscription_date",
+    "coluna_plano": "plans_type",
     "tabela_que_contem_plano": "subscription_plans",
     "coluna_historico_de_reproducoes": "date_listened",
     "tabela_que_contem_historico_de_reproducoes": "playback_history",

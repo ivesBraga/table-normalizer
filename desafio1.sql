@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`subscription_plans`(
 	`plans_type` VARCHAR(50) NULL,
 	`plans_price` DECIMAL(5,2) NOT NULL,
 	PRIMARY KEY (`plans_id`)
-) engine = InnoDB;
+) ENGINE = InnoDB;
 
 /*
 Colocando colunas na tabela subscription_plans
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`user`(
     `plans_id` INT NOT NULL,
     PRIMARY KEY (`user_id`),
     FOREIGN KEY (`plans_id` ) REFERENCES `SpotifyClone`.`subscription_plans`(`plans_id`)
-) engine = InnoDB;
+) ENGINE = InnoDB;
 
 /*
 Colocando colunas na tabela user
