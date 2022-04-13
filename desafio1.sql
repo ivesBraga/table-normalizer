@@ -121,29 +121,6 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`songs`(
 ) ENGINE = InnoDB;
 
 /*
-Cria tabela dos artistas seguidos
-*/
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`following_artists`(
-	`user_id` INT NOT NULL,
-    `artist_id` INT NOT NULL,
-	CONSTRAINT PRIMARY KEY (`user_id`, `artist_id`),
-	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
-	FOREIGN KEY (`artist_id`) REFERENCES `SpotifyClone`.`artist` (`artist_id`)
-) ENGINE = InnoDB;
-
-/*
-Cria tabela de histórico
-*/
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
-  	`user_id` INT NOT NULL,
-  	`song_id` INT NOT NULL,
-  	`date_listened` DATETIME NOT NULL,
-  	CONSTRAINT PRIMARY KEY(`user_id`, `song_id`),
-	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
-    FOREIGN KEY (`song_id`) REFERENCES `SpotifyClone`.`songs` (`song_id`)
-) ENGINE = InnoDB;
-
-/*
 Colocando colunas na tabela song
 */
 INSERT INTO song (name, album_id, song_seconds)
@@ -188,6 +165,29 @@ VALUES
 	("Wouldn't It Be Nice", 10, 213),
 	("Baby", 10, 136),
 	("You Make Me Feel So..", 10, 83);
+
+/*
+Cria tabela dos artistas seguidos
+*/
+CREATE TABLE IF NOT EXISTS `SpotifyClone`.`following_artists`(
+	`user_id` INT NOT NULL,
+    `artist_id` INT NOT NULL,
+	CONSTRAINT PRIMARY KEY (`user_id`, `artist_id`),
+	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
+	FOREIGN KEY (`artist_id`) REFERENCES `SpotifyClone`.`artist` (`artist_id`)
+) ENGINE = InnoDB;
+
+/*
+Cria tabela de histórico
+*/
+CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
+  	`user_id` INT NOT NULL,
+  	`song_id` INT NOT NULL,
+  	`date_listened` DATETIME NOT NULL,
+  	CONSTRAINT PRIMARY KEY(`user_id`, `song_id`),
+	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
+    FOREIGN KEY (`song_id`) REFERENCES `SpotifyClone`.`songs` (`song_id`)
+) ENGINE = InnoDB;
 
 /*
 Colocando colunas na tabela following_artists
