@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artists`(
 /*
 Colocando colunas na tabela artist
 */
-  INSERT INTO artist (artist_name)
+  INSERT INTO artists (artist_name)
 VALUES
 	('Walter Phoenix'),
     ('Peter Strong'),
