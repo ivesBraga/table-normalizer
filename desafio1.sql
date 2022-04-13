@@ -33,3 +33,12 @@ CREATE TABLE `SpotifyClone`.`user`(
     FOREIGN KEY (`plans_id` ) REFERENCES `SpotifyClone`.`plans`(`plans_id`)
 ) engine = InnoDB;
 
+/*
+Cria tabela dos artistas
+*/
+CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artist`(
+	`artist_id` INT NOT NULL AUTO_INCREMENT,
+    `artist_name` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`artist_id`)
+) ENGINE = InnoDB;
+
