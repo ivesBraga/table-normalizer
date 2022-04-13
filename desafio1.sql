@@ -178,18 +178,6 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`following_artists`(
 ) ENGINE = InnoDB;
 
 /*
-Cria tabela de histórico
-*/
-CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
-  	`user_id` INT NOT NULL,
-  	`song_id` INT NOT NULL,
-  	`date_listened` DATETIME NOT NULL,
-  	CONSTRAINT PRIMARY KEY(`user_id`, `song_id`),
-	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
-    FOREIGN KEY (`song_id`) REFERENCES `SpotifyClone`.`songs` (`song_id`)
-) ENGINE = InnoDB;
-
-/*
 Colocando colunas na tabela following_artists
 */
 INSERT INTO following_artists (user_id, artist_id)
@@ -216,6 +204,18 @@ VALUES
 	(9, 3),
 	(1, 2),
 	(1, 6);
+
+/*
+Cria tabela de histórico
+*/
+CREATE TABLE IF NOT EXISTS `SpotifyClone`.`playback_history` (
+  	`user_id` INT NOT NULL,
+  	`song_id` INT NOT NULL,
+  	`date_listened` DATETIME NOT NULL,
+  	CONSTRAINT PRIMARY KEY(`user_id`, `song_id`),
+	FOREIGN KEY (`user_id`) REFERENCES `SpotifyClone`.`user` (`user_id`),
+    FOREIGN KEY (`song_id`) REFERENCES `SpotifyClone`.`songs` (`song_id`)
+) ENGINE = InnoDB;
 
 /*
 Colocando colunas na tabela playback_history
